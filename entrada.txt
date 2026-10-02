@@ -1,4 +1,5 @@
-def f (int a) {
-    x = x + a;
-    return;
+def f () {
+  int a;
+  a = 3.;
+  return;
 }
