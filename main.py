@@ -1,11 +1,19 @@
 caracteres = []
 tokens = []
+palavras_reservadas = {'def': 'DEF', 'int': 'INT', 'return':'RETURN'}
+
 
 def ident(posicao, lista):
+    palavra = ''
     if lista[posicao].isalpha():
         while lista[posicao].isalpha():
+            palavra += lista[posicao]
             posicao += 1
-        tokens.append('IDENT')
+
+        if palavra in palavras_reservadas.keys():
+            tokens.append(palavras_reservadas.get(palavra))
+        else:
+            tokens.append('IDENT')
         return posicao
     return False
 
@@ -43,6 +51,7 @@ def numero(posicao, lista):
             
         return posicao
     return False
+
 
 with open('entrada.txt', 'r', encoding='utf-8') as entrada:
     conteudo = entrada.read()
