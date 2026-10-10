@@ -1,5 +1,5 @@
-def f () {
-  int a;
-  a = 3.;
-  return;
-}
+1. def f (int x) {
+2.   if x < 0
+3.      x = -x;
+4.   return; 
+5. }
